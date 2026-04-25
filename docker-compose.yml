@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  couchdb:
+    image: couchdb
+    volumes:
+      - couchdata:/opt/couchdb/data
+
+volumes:
+  couchdata:
+
+  couchdb:
+    image: couchdb
+    container_name: couchdb
+    ports:
+      - "5984:5984"
+    environment:
+      COUCHDB_USER: admin
+      COUCHDB_PASSWORD: admin
+
+  app:
+    build: .
+    container_name: medapp
+    ports:
+      - "8501:8501"
+    depends_on:
+      - couchdb
