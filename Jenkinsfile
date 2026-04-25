@@ -3,13 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                git branch: 'main',
-                url: 'www.github.com/KrutiSoumya/MedInsight'
-            }
-        }
-
         stage('Build') {
             steps {
                 bat 'docker build -t medinsight .'
@@ -25,8 +18,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 bat '''
-                docker stop medinsight-container
-                docker rm medinsight-container
+                docker stop medinsight-container || exit 0
+                docker rm medinsight-container || exit 0
                 docker run -d -p 8501:8501 --name medinsight-container medinsight
                 '''
             }
