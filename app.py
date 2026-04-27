@@ -8,10 +8,6 @@ import uuid
 
 st.set_page_config(page_title="MedInsight", layout="wide")
 
-# =========================
-# DATABASE CONNECTION (FIXED)
-# =========================
-
 @st.cache_resource
 def get_db():
     couch = couchdb.Server("http://admin:admin@couchdb:5984/")
@@ -26,16 +22,9 @@ def get_db():
 
 db = get_db()
 
-# =========================
-# FILE STORAGE
-# =========================
-
 if not os.path.exists("reports"):
     os.makedirs("reports")
 
-# =========================
-# EXTRACTION
-# =========================
 
 def extract_values(file):
     content = file.read().decode("utf-8")
