@@ -5,6 +5,7 @@ services:
   couchdb:
     image: couchdb
     container_name: couchdb
+    restart: always
     ports:
       - "5984:5984"
     environment:
@@ -16,6 +17,7 @@ services:
   app:
     build: .
     container_name: medapp
+    restart: always
     ports:
       - "8501:8501"
     depends_on:
