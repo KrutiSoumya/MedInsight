@@ -151,8 +151,7 @@ def get_analysis(pid):
 
 st.title("🩺 MedInsight Dashboard (CouchDB)")
 
-# REGISTER
-st.header("1. Patient Registration")
+st.header("1. Patient Register")
 
 pid = st.text_input("Patient ID")
 name = st.text_input("Name")
