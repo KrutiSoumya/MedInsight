@@ -148,9 +148,6 @@ def get_analysis(pid):
             docs.append(doc)
     return docs
 
-# =========================
-# UI
-# =========================
 
 st.title("🩺 MedInsight Dashboard (CouchDB)")
 
