@@ -84,9 +84,6 @@ def get_recommendation(risk):
         return ["Exercise daily", "Reduce sugar/fat", "Check again in 2 weeks"]
     return ["Maintain healthy lifestyle"]
 
-# =========================
-# DATABASE FUNCTIONS
-# =========================
 
 def register_patient(pid, name, age, gender):
     doc = {
