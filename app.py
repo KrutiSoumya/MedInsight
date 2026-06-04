@@ -11,7 +11,7 @@ st.set_page_config(page_title="MedInsight", layout="wide")
 @st.cache_resource
 def get_db():
     couch = couchdb.Server("http://admin:admin@couchdb:5984/")
-    couch.resource.credentials = ("admin", "admin")  # ✅ FIX
+    couch.resource.credentials = ("admin", "admin")  
 
     db_name = "medical_analyzer"
 
