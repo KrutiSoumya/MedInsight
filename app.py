@@ -40,9 +40,6 @@ def extract_values(file):
         "bp": find(r"BP\s*:\s*(\d+)")
     }
 
-# =========================
-# ANALYSIS (UNCHANGED 🔥)
-# =========================
 
 def analyze(data):
     score = 0
