@@ -6,7 +6,7 @@ import json
 import pandas as pd
 import uuid
 
-st.set_page_config(page_title="MedInsight", layout="wide")
+st.set_page_config(page_title="MedInsight Application", layout="wide")
 
 @st.cache_resource
 def get_db():
